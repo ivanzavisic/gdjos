@@ -33,15 +33,14 @@
 
   <h2>1. Who we are</h2>
   <p>
-    <strong>Reducos Software j.d.o.o.</strong> ("we", "us") &mdash; a limited liability company
-    registered in Croatia, OIB 00684082197, registered office Drniška ulica 9, Osijek, Croatia
-    &mdash; is the <em>data controller</em> for the personal data described in this policy.
+    <strong>JASPERO d.o.o.</strong> ("we", "us") &mdash; a limited liability company registered in
+    Croatia, OIB 38473301731, registered office Drniška ulica 9, Osijek, Croatia &mdash; is the
+    <em>data controller</em> for the personal data described in this policy.
   </p>
   <p>
     <strong>GameDevJug</strong> is the studio brand we publish under, and WRIGGZ is our game. If you
-    see "GameDevJug" on a store page and "Reducos Software j.d.o.o." in a legal notice, they refer to
-    the same operation: the brand is the name, the company is the legal entity responsible for your
-    data.
+    see "GameDevJug" on a store page and "JASPERO d.o.o." in a legal notice, they refer to the same
+    operation: the brand is the name, the company is the legal entity responsible for your data.
   </p>
   <p>Privacy contact: <a href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a></p>
 
@@ -278,10 +277,10 @@
     <a href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a>
   </p>
   <p class="addr">
-    Reducos Software j.d.o.o.<br />
+    JASPERO d.o.o.<br />
     Drniška ulica 9<br />
     Osijek, Croatia<br />
-    OIB 00684082197
+    OIB 38473301731
   </p>
 </article>
 

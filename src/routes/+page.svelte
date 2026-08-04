@@ -94,8 +94,8 @@
         backend-driven matchmaking and progression.
       </p>
       <p class="about-legal">
-        GameDevJug is a brand of <strong>Reducos Software j.d.o.o.</strong>, a company registered in
-        Croatia (OIB 00684082197), Drniška ulica 9, Osijek.
+        GameDevJug is a brand of <strong>JASPERO d.o.o.</strong>, a company registered in
+        Croatia (OIB 38473301731), Drniška ulica 9, Osijek.
       </p>
     </div>
     <dl class="facts">

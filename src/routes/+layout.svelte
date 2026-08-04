@@ -40,8 +40,8 @@
       <div class="foot-col">
         <p class="foot-brand">GameDev<span class="brand-alt">Jug</span><span class="brand-dot">.</span></p>
         <p class="foot-legal">
-          GameDevJug is a brand of <strong>Reducos Software j.d.o.o.</strong>, Drniška ulica 9,
-          Osijek, Croatia · OIB 00684082197
+          GameDevJug is a brand of <strong>JASPERO d.o.o.</strong>, Drniška ulica 9,
+          Osijek, Croatia · OIB 38473301731
         </p>
       </div>
       <nav class="foot-links" aria-label="Legal">

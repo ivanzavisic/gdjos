@@ -1,6 +1,6 @@
 # GDJOS — GameDevJug studio site
 
-Static showcase site for **GameDevJug**, the studio brand of *Reducos Software j.d.o.o.*
+Static showcase site for **GameDevJug**, the studio brand of *JASPERO d.o.o.*
 (Osijek, Croatia). SvelteKit + `adapter-static`, prerendered, no runtime server.
 
 ## Routes
@@ -32,7 +32,7 @@ Pushing to `main` runs `.github/workflows/deploy.yml`, which builds and publishe
 
 > **GitHub Pages is a staging host only.** Epic's Developer Portal verifies domain ownership via a
 > DNS TXT record, and `github.io` records cannot be edited. Before the privacy-policy URL is
-> submitted to Epic, this site has to move to a real domain controlled by Reducos Software j.d.o.o.
+> submitted to Epic, this site has to move to a real domain controlled by JASPERO d.o.o.
 
 ## Notes
 
