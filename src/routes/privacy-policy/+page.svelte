@@ -1,7 +1,7 @@
 <script>
   import { base } from '$app/paths';
 
-  const updated = '4 August 2026';
+  const updated = '18 August 2026';
 </script>
 
 <svelte:head>
@@ -20,9 +20,9 @@
 
   <div class="notice">
     <strong>Pre-release draft.</strong> WRIGGZ has not been released yet. This policy is published in
-    advance for transparency and describes the data practices that will apply at launch. Some features
-    it covers — anti-cheat and crash reporting — are not yet enabled in any build; each is marked
-    below. This page will be updated, and dated, before the game becomes publicly playable.
+    advance for transparency and describes the data practices that will apply at launch. One feature it
+    covers — <strong>anti-cheat</strong> — is not yet enabled in any build, and is marked below. This page
+    will be updated, and dated, before the game becomes publicly playable.
   </div>
 
   <p class="lead">
@@ -100,7 +100,12 @@
     </li>
     <li>
       <strong>Diagnostic logs and crash reports</strong> &mdash; automatically generated if the game
-      malfunctions, so we can fix it. <em>(Not yet enabled — see the notice at the top.)</em>
+      malfunctions, so we can fix it. This is handled by <strong>Sentry</strong> and covers the crash
+      itself, the state of the game at that moment, and the log leading up to it — the technical
+      information needed to find the fault.
+      <br />
+      We deliberately do <em>not</em> send your IP address or device name to Sentry, and we do not attach a
+      screenshot of your screen, even though the tooling offers all three.
     </li>
     <li>
       <strong>Gameplay telemetry</strong> &mdash; queue times, match duration and similar aggregate
@@ -159,7 +164,13 @@
       <tr><td>Epic Games, Inc.</td><td>Account sign-in (Epic Account Services), store distribution, purchases, anti-cheat</td></tr>
       <tr><td>Microsoft (PlayFab)</td><td>Player account database and progression storage</td></tr>
       <tr><td>Edgegap</td><td>Game server hosting and matchmaking</td></tr>
-      <tr><td>Crash-reporting provider</td><td>Crash and error reporting. <em>Not yet selected or enabled; this row will name the provider before launch.</em></td></tr>
+      <tr>
+        <td>Sentry (Functional Software, Inc.)</td>
+        <td>
+          Crash and error reporting. We use Sentry's <strong>European region</strong>, so this data is
+          processed on servers inside the EU.
+        </td>
+      </tr>
     </tbody>
   </table>
   <p>
@@ -177,6 +188,10 @@
     States. Where data is transferred outside the EEA, it is protected by an appropriate safeguard
     under GDPR Chapter V &mdash; in practice, the European Commission's Standard Contractual Clauses
     or an adequacy decision.
+  </p>
+  <p>
+    Crash reports are an exception in your favour: we use <strong>Sentry's European region</strong>, so
+    that data stays inside the EU and no transfer safeguard is needed for it.
   </p>
 
   <h2>7. How long we keep it</h2>
