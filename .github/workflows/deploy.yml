@@ -28,9 +28,18 @@ jobs:
         run: npm install
 
       - name: Build
-        # GitHub Pages serves this repo under /gdjos/, so the app needs that prefix baked in.
+        # 🚨 EMPTY ON PURPOSE SINCE 2026-09-06 — the site is served from the CUSTOM DOMAIN
+        # gamedevjug.org, which serves from the ROOT.
+        #
+        # This used to be `/${{ github.event.repository.name }}` (i.e. `/gdjos`), which was correct while
+        # the only URL was ivanzavisic.github.io/gdjos/. On a custom domain that prefix is wrong in a
+        # way that is easy to miss: the HTML still loads, but every asset and internal link resolves to
+        # gamedevjug.org/gdjos/... and 404s. The page renders unstyled and nothing navigates.
+        #
+        # ⚠️ If the custom domain is ever removed, put the prefix back or the github.io URL breaks the
+        # same way in reverse. The two are mutually exclusive.
         env:
-          BASE_PATH: /${{ github.event.repository.name }}
+          BASE_PATH: ''
         run: npm run build
 
       - uses: actions/configure-pages@v5
