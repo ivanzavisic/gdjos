@@ -2,28 +2,18 @@
   import { base } from '$app/paths';
 
   /**
-   * Deliberately no fake catalogue. GameDevJug has exactly one game in development, so the card row
-   * describes WRIGGZ's real modes rather than inventing titles to fill the grid — a showcase that
-   * lists games that do not exist is the fastest way to lose a reader's trust.
+   * The studio's catalogue. Exactly one entry, because exactly one game exists — a showcase that
+   * lists games that do not exist is the fastest way to lose a reader's trust. The grid is built to
+   * take more entries without changing anything but this array.
    */
-  const modes = [
+  const games = [
     {
-      tag: '1v1',
-      title: 'Duel',
-      body: 'Pure aim and movement. No teammates to blame, no cover to hide behind.',
+      title: 'WRIGGZ',
+      genre: 'Competitive arena shooter',
+      status: 'In development',
+      blurb: 'Menu-first matchmaking, dedicated servers, per-queue skill ratings.',
+      href: '/games-wriggz',
       hue: 158
-    },
-    {
-      tag: '2v2',
-      title: 'Doubles',
-      body: 'Coordinated pressure and cover fire. Positioning matters more than raw aim.',
-      hue: 196
-    },
-    {
-      tag: 'RANKED',
-      title: 'Competitive',
-      body: 'Same rules, separate pool. Only ranked moves your rating, with per-queue MMR.',
-      hue: 268
     }
   ];
 </script>
@@ -43,43 +33,43 @@
   <div class="hero-fade" aria-hidden="true"></div>
 
   <div class="hero-inner">
-    <span class="tag">IN DEVELOPMENT · UNREAL ENGINE 5.5</span>
-    <h1>WRIGGZ</h1>
+    <span class="tag">INDEPENDENT GAME STUDIO · CROATIA</span>
+    <h1>GameDevJug</h1>
     <p class="hero-copy">
-      A fast-paced competitive arena shooter. Menu-first matchmaking, dedicated servers, and
-      per-queue skill ratings — built so that the only thing between you and the next match is
-      pressing play.
+      We build competitive multiplayer games for PC. Small team, dedicated servers, and a stubborn
+      preference for games that respect the time you put into them.
     </p>
 
     <div class="hero-cta">
-      <span class="btn btn-primary" aria-disabled="true">COMING TO EPIC GAMES STORE</span>
-      <span class="cta-note">Free to play · Wishlist opens closer to release</span>
+      <a class="btn btn-primary" href="#games">SEE OUR GAMES</a>
+      <span class="cta-note">One in development · More when they are real</span>
     </div>
   </div>
 </section>
 
-<!-- ================= MODES ================= -->
+<!-- ================= GAMES ================= -->
 <section class="section" id="games">
   <div class="section-head">
-    <h2>WRIGGZ — game modes</h2>
-    <p>Two queue types over the same modes. Identical rules, different pools.</p>
+    <h2>Games</h2>
+    <p>What we are building. One title today, and we will not pad this list until there are more.</p>
   </div>
 
-  <div class="cards">
-    {#each modes as m}
-      <article class="card">
-        <div class="card-art" style="--hue: {m.hue}" aria-hidden="true">
-          <span class="card-badge">{m.tag}</span>
-        </div>
-        <div class="card-body">
-          <h3>{m.title}</h3>
-          <p>{m.body}</p>
-        </div>
-      </article>
+  <div class="games">
+    {#each games as g}
+      <a class="game-card" href="{base}{g.href}" style="--hue: {g.hue}">
+        <span class="game-art" aria-hidden="true"></span>
+        <span class="game-status">{g.status}</span>
+        <span class="game-body">
+          <span class="game-title">{g.title}</span>
+          <span class="game-genre">{g.genre}</span>
+          <span class="game-blurb">{g.blurb}</span>
+          <span class="game-more">View game →</span>
+        </span>
+      </a>
     {/each}
   </div>
   <p class="art-note">
-    Placeholder art — real in-game captures replace these before the store page goes live.
+    Placeholder art — real in-game captures replace this before the store page goes live.
   </p>
 </section>
 
@@ -222,6 +212,73 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.1rem;
   }
+  /* ---------- games grid ---------- */
+  /*
+   * 400x600 as specified. `max-width: 100%` and the aspect-ratio fallback keep it from overflowing a
+   * phone, where a fixed 400px would force the whole page to scroll sideways.
+   */
+  .games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .game-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    max-width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .18s, transform .18s;
+  }
+  .game-card:hover,
+  .game-card:focus-visible {
+    border-color: var(--accent-dim);
+    transform: translateY(-3px);
+  }
+  .game-art {
+    flex: 1 1 auto;
+    background:
+      radial-gradient(75% 65% at 32% 28%, hsl(var(--hue) 70% 42% / .55), transparent 62%),
+      radial-gradient(70% 60% at 72% 72%, hsl(calc(var(--hue) + 40) 70% 38% / .40), transparent 60%),
+      var(--bg-raised);
+  }
+  .game-status {
+    position: absolute;
+    top: .9rem;
+    left: .9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .3rem .65rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, .55);
+    border: 1px solid var(--line);
+    font-size: .72rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .game-body {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    padding: 1.15rem 1.25rem 1.35rem;
+    border-top: 1px solid var(--line);
+    background: var(--bg-card);
+  }
+  .game-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -.01em; }
+  .game-genre { font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+  .game-blurb { color: var(--muted); font-size: .95rem; line-height: 1.5; }
+  .game-more { margin-top: .35rem; font-size: .88rem; color: var(--text); opacity: .75; }
+  .game-card:hover .game-more { opacity: 1; }
+
   .card {
     background: var(--bg-card);
     border: 1px solid var(--line);
