@@ -106,7 +106,8 @@
     <a class="mail" href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a>
   </p>
   <p class="privacy-link">
-    See our <a href="{base}/privacy-policy/">Privacy Policy</a> for what data WRIGGZ collects and why.
+    See our <a href="{base}/privacy-policy/">Privacy Policy</a> for what data WRIGGZ collects and why,
+    and our <a href="{base}/terms/">Terms of Service</a> for the rules of the online services.
   </p>
 </section>
 
@@ -206,12 +207,6 @@
   }
   .section-head p { margin: 0; color: var(--muted); font-size: .95rem; }
 
-  /* ---------- cards ---------- */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.1rem;
-  }
   /* ---------- games grid ---------- */
   /*
    * 400x600 as specified. `max-width: 100%` and the aspect-ratio fallback keep it from overflowing a
@@ -279,38 +274,12 @@
   .game-more { margin-top: .35rem; font-size: .88rem; color: var(--text); opacity: .75; }
   .game-card:hover .game-more { opacity: 1; }
 
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: border-color .18s, transform .18s;
-  }
-  .card:hover { border-color: var(--accent-dim); transform: translateY(-2px); }
-  .card-art {
-    position: relative;
-    aspect-ratio: 16 / 10;
-    background:
-      radial-gradient(80% 70% at 30% 25%, hsl(var(--hue) 70% 42% / .55), transparent 62%),
-      linear-gradient(150deg, hsl(var(--hue) 45% 22%), #10151a 78%);
-  }
-  .card-badge {
-    position: absolute;
-    top: .7rem;
-    right: .7rem;
-    background: rgba(6, 9, 11, .82);
-    border: 1px solid var(--accent-dim);
-    color: var(--accent);
-    font-size: .62rem;
-    font-weight: 800;
-    letter-spacing: .09em;
-    padding: .24rem .48rem;
-    border-radius: 3px;
-  }
-  .card-body { padding: 1rem 1.1rem 1.2rem; }
-  .card-body h3 { margin: 0 0 .35rem; font-size: 1.02rem; }
-  .card-body p { margin: 0; color: var(--muted); font-size: .88rem; }
-
+  /*
+   * The `.cards` / `.card-*` rules that used to sit here were dead: the game-mode cards they styled
+   * moved to /games-wriggz in the studio rework, and only the CSS stayed behind. Svelte was reporting
+   * eight unused selectors on every build — deleted rather than silenced, since the live copy lives in
+   * the game page's own stylesheet.
+   */
   .art-note { margin: 1rem 0 0; color: #6b7481; font-size: .76rem; }
 
   /* ---------- about ---------- */

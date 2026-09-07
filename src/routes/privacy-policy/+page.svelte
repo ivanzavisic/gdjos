@@ -300,7 +300,21 @@
 </article>
 
 <style>
-  .policy { font-size: 1rem; }
+  /*
+   * The reading column lives HERE, not in the layout.
+   *
+   * 🪤 The layout used to add it from the URL (`class:article={$page.url.pathname.includes(...)}`), so
+   * the class was MISSING from the prerendered HTML and only appeared after hydration — this page first
+   * painted edge-to-edge with no padding at all, then jumped into a 48rem column. A static legal page
+   * should not need JavaScript to be readable.
+   */
+  .policy {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 4rem;
+    width: 100%;
+    font-size: 1rem;
+  }
 
   .crumb { margin: 0 0 2rem; font-size: .86rem; }
   .crumb a { color: var(--accent); text-decoration: none; }

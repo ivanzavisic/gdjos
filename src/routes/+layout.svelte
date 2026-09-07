@@ -1,6 +1,5 @@
 <script>
   import { base } from '$app/paths';
-  import { page } from '$app/stores';
 
   let { children } = $props();
 
@@ -31,7 +30,18 @@
     </div>
   </header>
 
-  <main class:article={$page.url.pathname.includes('privacy-policy')}>
+  <!--
+    No route sniffing here. Long-form pages set their own reading column in their own `<style>` — see
+    `.policy` in /privacy-policy and /terms.
+
+    🪤 It used to be `class:article={$page.url.pathname.includes('privacy-policy')}`, and that was
+    BROKEN IN THE STATIC HTML: `$page` is not resolved during prerender, so the class was absent from
+    the file GitHub Pages serves and only appeared after hydration. The privacy policy therefore first
+    painted edge-to-edge with zero padding and then jumped into a 48rem column. Owning the width in the
+    page removes the JS dependency, the flash, and a route list that every new legal page would have to
+    be added to.
+  -->
+  <main>
     {@render children()}
   </main>
 
@@ -46,6 +56,7 @@
       </div>
       <nav class="foot-links" aria-label="Legal">
         <a href="{base}/privacy-policy/">Privacy Policy</a>
+        <a href="{base}/terms/">Terms of Service</a>
         <a href="mailto:gamedevjug@gmail.com">Contact</a>
       </nav>
     </div>
@@ -145,12 +156,6 @@
   }
 
   main { flex: 1; }
-  main.article {
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 3rem 1.25rem 4rem;
-    width: 100%;
-  }
 
   /* ---------- footer ---------- */
   .foot {

@@ -123,7 +123,8 @@
     Questions: <a class="mail" href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a>
   </p>
   <p class="privacy-link">
-    See our <a href="{base}/privacy-policy/">Privacy Policy</a> for what data WRIGGZ collects and why.
+    See our <a href="{base}/privacy-policy/">Privacy Policy</a> for what data WRIGGZ collects and why,
+    and our <a href="{base}/terms/">Terms of Service</a> for the rules of the online services.
   </p>
 </section>
 
