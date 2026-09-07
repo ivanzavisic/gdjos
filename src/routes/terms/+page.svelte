@@ -117,6 +117,15 @@
       We may adjust or reset ratings, statistics, currency or items where we find they resulted from
       cheating, an exploit, or a fault of ours.
     </li>
+    <li>
+      <strong>Reporting another player.</strong> After a match you can report someone for cheating,
+      abuse or deliberately ruining the game. Reports are <strong>recorded on our servers</strong> and
+      used to investigate conduct and decide enforcement &mdash; see section&nbsp;5 of the
+      <a href="{base}/privacy-policy/">Privacy Policy</a> for exactly what a report records and how
+      long we keep it. We do not tell the reported player who reported them, and we do not act on a
+      single report alone. <strong>Do not abuse reporting</strong> &mdash; deliberately filing false
+      reports is itself a breach of section&nbsp;3.
+    </li>
   </ul>
 
   <h2>6. Suspension and termination</h2>

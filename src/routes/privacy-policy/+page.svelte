@@ -1,7 +1,7 @@
 <script>
   import { base } from '$app/paths';
 
-  const updated = '18 August 2026';
+  const updated = '7 September 2026';
 </script>
 
 <svelte:head>
@@ -110,6 +110,7 @@
     <li>
       <strong>Gameplay telemetry</strong> &mdash; queue times, match duration and similar aggregate
       events, used to balance the game and size our servers.
+      <em>(Not yet collected &mdash; no analytics provider is integrated in any build.)</em>
     </li>
   </ul>
 
@@ -150,6 +151,15 @@
     legitimate client are rejected and logged.
   </p>
   <p>
+    <strong>Player reports.</strong> After a match you can report another player for cheating, abuse
+    or deliberately ruining the game. When you do, our game server records the report in its match
+    log: <strong>who reported whom</strong> (both players' account identifiers and display names) and
+    <strong>when</strong>. It does not record a reason, a message, or anything you type &mdash; there
+    is no free-text field. We use these records to investigate conduct and to decide enforcement, and
+    we keep them because a single report rarely means much while a pattern of them does. The player
+    you report is not told who reported them.
+  </p>
+  <p>
     <strong>Automated decisions.</strong> Some enforcement may be applied automatically &mdash; for
     example a detection that results in a suspension. Where an automated decision meaningfully
     affects you, you have the right to ask for human review. Email us and a person will look at it;
@@ -164,6 +174,7 @@
       <tr><td>Epic Games, Inc.</td><td>Account sign-in (Epic Account Services), store distribution, purchases, anti-cheat</td></tr>
       <tr><td>Microsoft (PlayFab)</td><td>Player account database and progression storage</td></tr>
       <tr><td>Edgegap</td><td>Game server hosting and matchmaking</td></tr>
+      <tr><td>Cloudflare, Inc. (R2)</td><td>Storage for game server match logs after a match ends</td></tr>
       <tr>
         <td>Sentry (Functional Software, Inc.)</td>
         <td>
@@ -202,6 +213,12 @@
       deleted or anonymised.
     </li>
     <li><strong>Diagnostic logs and crash reports</strong> &mdash; up to <strong>90 days</strong>.</li>
+    <li>
+      <strong>Game server match logs</strong> &mdash; up to <strong>90 days</strong>. Each match runs
+      on its own server, and that server's log is copied to our log storage when the match ends.
+      These logs contain account identifiers, display names, connection information and any
+      <strong>player reports</strong> made during the match (see section&nbsp;5).
+    </li>
     <li>
       <strong>Anti-cheat and ban records</strong> &mdash; retained for as long as necessary to keep an
       enforcement action effective.
