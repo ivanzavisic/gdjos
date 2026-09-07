@@ -19,10 +19,10 @@
   <p class="meta">Last updated: {updated}</p>
 
   <div class="notice">
-    <strong>Pre-release draft.</strong> WRIGGZ has not been released yet. This policy is published in
-    advance for transparency and describes the data practices that will apply at launch. One feature it
-    covers — <strong>anti-cheat</strong> — is not yet enabled in any build, and is marked below. This page
-    will be updated, and dated, before the game becomes publicly playable.
+    <strong>Pre-release.</strong> WRIGGZ has not been released yet. This policy is published in advance
+    for transparency and describes the data practices that will apply at launch. One item is marked
+    inline as not yet collected (gameplay telemetry). This page will be updated, and dated, before the
+    game becomes publicly playable.
   </div>
 
   <p class="lead">
@@ -138,17 +138,20 @@
     </tbody>
   </table>
 
-  <h2>5. Anti-cheat, enforcement and automated decisions</h2>
+  <h2>5. Fair play, enforcement and automated decisions</h2>
   <p>
-    To keep competitive matches fair, WRIGGZ will use anti-cheat protection. While the game is
-    running, the anti-cheat component inspects the game process and related system activity for signs
-    of tampering or unauthorised third-party software. It runs only while the game is running, and
-    reports only what is needed to detect cheating.
-    <em>(Anti-cheat is not yet integrated — see the notice at the top.)</em>
+    <strong>There is no anti-cheat software in WRIGGZ.</strong> Nothing in the game inspects your
+    system, your processes, or any software outside WRIGGZ itself, and nothing installs a driver or a
+    background service. If that ever changes we will say so here, and date it, before the build that
+    contains it is released.
   </p>
   <p>
-    Our game servers also validate gameplay directly: actions that are physically impossible for a
-    legitimate client are rejected and logged.
+    What we do instead is enforce the rules <strong>on our own servers</strong>. Every match runs on a
+    server we control, and that server &mdash; not your game &mdash; decides what actually happened.
+    Actions that are impossible for a legitimate client, such as moving further in one moment than the
+    game allows or firing faster than the weapon permits, are rejected and recorded. This looks only
+    at what your game sends us over the network. It cannot and does not see anything else on your
+    computer.
   </p>
   <p>
     <strong>Player reports.</strong> After a match you can report another player for cheating, abuse
@@ -160,10 +163,13 @@
     you report is not told who reported them.
   </p>
   <p>
-    <strong>Automated decisions.</strong> Some enforcement may be applied automatically &mdash; for
-    example a detection that results in a suspension. Where an automated decision meaningfully
-    affects you, you have the right to ask for human review. Email us and a person will look at it;
-    we will tell you the outcome and our reasoning.
+    <strong>Automated decisions.</strong> <strong>We do not currently suspend or ban anyone
+    automatically.</strong> Enforcement is decided by a person looking at the records described above.
+    If we later introduce automated enforcement &mdash; a detection that results in a suspension
+    without human involvement &mdash; then where such a decision meaningfully affects you, you have
+    the right under Article&nbsp;22 GDPR to ask for human review: email us, a person will look at it,
+    and we will tell you the outcome and our reasoning. That right stands whether or not the
+    automation exists yet.
   </p>
 
   <h2>6. Who we share data with</h2>
@@ -171,7 +177,7 @@
   <table>
     <thead><tr><th>Provider</th><th>Role</th></tr></thead>
     <tbody>
-      <tr><td>Epic Games, Inc.</td><td>Account sign-in (Epic Account Services), store distribution, purchases, anti-cheat</td></tr>
+      <tr><td>Epic Games, Inc.</td><td>Account sign-in (Epic Account Services), store distribution, purchases</td></tr>
       <tr><td>Microsoft (PlayFab)</td><td>Player account database and progression storage</td></tr>
       <tr><td>Edgegap</td><td>Game server hosting and matchmaking</td></tr>
       <tr><td>Cloudflare, Inc. (R2)</td><td>Storage for game server match logs after a match ends</td></tr>
@@ -220,7 +226,7 @@
       <strong>player reports</strong> made during the match (see section&nbsp;5).
     </li>
     <li>
-      <strong>Anti-cheat and ban records</strong> &mdash; retained for as long as necessary to keep an
+      <strong>Enforcement and ban records</strong> &mdash; retained for as long as necessary to keep an
       enforcement action effective.
     </li>
     <li>
