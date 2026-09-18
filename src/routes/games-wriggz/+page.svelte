@@ -5,6 +5,9 @@
    * Moved here from the landing page (2026-09-06). The studio page should describe the STUDIO; game
    * detail belongs to the game. Same content, correct home.
    */
+  /** The live store page. One constant, because two buttons and a sentence point at it. */
+  const storeUrl = 'https://store.epicgames.com/p/wriggz-c2e9bc';
+
   const modes = [
     {
       tag: '1v1',
@@ -13,7 +16,9 @@
       hue: 158
     },
     {
-      tag: '2v2',
+      // Matches the game: the 2v2 button is closed and tagged COMING SOON (patch1, Title Data
+      // Queue.2v2Enabled). Re-open both together.
+      tag: '2v2 · COMING SOON',
       title: 'Doubles',
       body: 'Coordinated pressure and cover fire. Positioning matters more than raw aim.',
       hue: 196
@@ -21,23 +26,22 @@
     {
       tag: 'RANKED',
       title: 'Competitive',
-      body: 'Same rules, separate pool. Only ranked moves your rating, with per-queue MMR.',
+      body: 'Same rules, separate pool. Unlocks at level 20; only ranked moves your rating, with per-queue MMR.',
       hue: 268
     }
   ];
 
   /**
-   * Only things that are true today. No release date, no player counts, no review quotes — a
-   * pre-release page that invents momentum is the one thing a reader will remember when it turns out
-   * to be wrong.
+   * Only things that are true today. No player counts, no review quotes — a page that invents
+   * momentum is the one thing a reader will remember when it turns out to be wrong.
    */
   const facts = [
     { k: 'Genre',    v: 'Competitive arena shooter' },
     { k: 'Engine',   v: 'Unreal Engine 5.5' },
     { k: 'Platform', v: 'PC — Epic Games Store' },
-    { k: 'Players',  v: '1v1 and 2v2' },
+    { k: 'Players',  v: '1v1 · 2v2 coming soon' },
     { k: 'Price',    v: 'Free to play' },
-    { k: 'Status',   v: 'In development' }
+    { k: 'Status',   v: 'Out now' }
   ];
 </script>
 
@@ -52,7 +56,7 @@
 <section class="top">
   <a class="back" href="{base}/#games">← All games</a>
 
-  <span class="tag">IN DEVELOPMENT · UNREAL ENGINE 5.5</span>
+  <span class="tag">OUT NOW · UNREAL ENGINE 5.5</span>
   <h1>WRIGGZ</h1>
   <p class="lede">
     A fast-paced competitive arena shooter. Menu-first matchmaking, dedicated servers, and per-queue
@@ -60,9 +64,17 @@
   </p>
 
   <div class="cta">
-    <span class="btn" aria-disabled="true">COMING TO EPIC GAMES STORE</span>
-    <span class="note">Free to play · Wishlist opens closer to release</span>
+    <a class="btn" href={storeUrl} target="_blank" rel="noopener">GET IT ON THE EPIC GAMES STORE</a>
+    <span class="note">Free to play · PC</span>
   </div>
+
+  <img
+    class="key-art"
+    src="{base}/wriggz-key-art.webp"
+    alt="WRIGGZ key art: a dark helmeted ball with glowing X eyes, trailing red smoke"
+    width="2000"
+    height="1343"
+  />
 </section>
 
 <section class="section">
@@ -84,9 +96,6 @@
       </article>
     {/each}
   </div>
-  <p class="art-note">
-    Placeholder art — real in-game captures replace these before the store page goes live.
-  </p>
 </section>
 
 <section class="section">
@@ -117,9 +126,10 @@
 </section>
 
 <section class="section closing">
-  <h2>Follow along</h2>
+  <h2>Play it</h2>
   <p>
-    There is no release date to announce yet. When there is, it will be here first.
+    WRIGGZ is out now and free to play on the
+    <a class="mail" href={storeUrl} target="_blank" rel="noopener">Epic Games Store</a>.
     Questions: <a class="mail" href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a>
   </p>
   <p class="privacy-link">
@@ -176,9 +186,21 @@
     font-weight: 700;
     letter-spacing: .04em;
     font-size: .88rem;
-    cursor: default;
+    text-decoration: none;
+    transition: background .15s;
   }
+  .btn:hover { background: var(--accent-dim); }
   .note { color: var(--muted); font-size: .88rem; }
+
+  .key-art {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 2.25rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #000;
+  }
 
   .section {
     max-width: var(--max);
@@ -225,7 +247,6 @@
   .card-body { padding: 1rem 1.1rem 1.2rem; }
   .card-body h3 { margin: 0 0 .35rem; font-size: 1.1rem; }
   .card-body p { margin: 0; color: var(--muted); font-size: .93rem; line-height: 1.55; }
-  .art-note { margin: 1rem 0 0; color: var(--muted); font-size: .82rem; }
 
   .split {
     display: grid;

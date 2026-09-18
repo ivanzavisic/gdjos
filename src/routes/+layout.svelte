@@ -24,7 +24,6 @@
       </nav>
 
       <div class="topbar-right">
-        <span class="pill">IN DEVELOPMENT</span>
         <span class="avatar" aria-hidden="true"></span>
       </div>
     </div>
@@ -144,16 +143,6 @@
   .nav a:hover { color: var(--text); }
 
   .topbar-right { display: flex; align-items: center; gap: .9rem; margin-left: auto; }
-  .pill {
-    background: var(--accent);
-    color: #05210f;
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .08em;
-    padding: .4rem .7rem;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
   .avatar {
     width: 28px; height: 28px;
     border-radius: 50%;

@@ -10,9 +10,14 @@
     {
       title: 'WRIGGZ',
       genre: 'Competitive arena shooter',
-      status: 'In development',
+      status: 'Out now',
       blurb: 'Menu-first matchmaking, dedicated servers, per-queue skill ratings.',
-      href: '/games-wriggz',
+      // Released 2026-09: the card goes straight to the store page. `external` opens it in a new tab.
+      href: 'https://store.epicgames.com/p/wriggz-c2e9bc',
+      external: true,
+      art: '/wriggz-key-art.webp',
+      // Where the character sits in the art, so a portrait card crops around it rather than the centre.
+      artFocus: '30% 45%',
       hue: 158
     }
   ];
@@ -42,7 +47,7 @@
 
     <div class="hero-cta">
       <a class="btn btn-primary" href="#games">SEE OUR GAMES</a>
-      <span class="cta-note">One in development · More when they are real</span>
+      <span class="cta-note">WRIGGZ is out now · More when they are real</span>
     </div>
   </div>
 </section>
@@ -56,8 +61,24 @@
 
   <div class="games">
     {#each games as g}
-      <a class="game-card" href="{base}{g.href}" style="--hue: {g.hue}">
-        <span class="game-art" aria-hidden="true"></span>
+      <a
+        class="game-card"
+        href={g.external ? g.href : `${base}${g.href}`}
+        target={g.external ? '_blank' : undefined}
+        rel={g.external ? 'noopener' : undefined}
+        style="--hue: {g.hue}"
+      >
+        {#if g.art}
+          <img
+            class="game-art game-img"
+            src="{base}{g.art}"
+            alt=""
+            loading="lazy"
+            style="object-position: {g.artFocus ?? 'center'}"
+          />
+        {:else}
+          <span class="game-art" aria-hidden="true"></span>
+        {/if}
         <span class="game-status">{g.status}</span>
         <span class="game-body">
           <span class="game-title">{g.title}</span>
@@ -68,9 +89,6 @@
       </a>
     {/each}
   </div>
-  <p class="art-note">
-    Placeholder art — real in-game captures replace this before the store page goes live.
-  </p>
 </section>
 
 <!-- ================= ABOUT ================= -->
@@ -93,7 +111,7 @@
       <div><dt>Based in</dt><dd>Croatia</dd></div>
       <div><dt>Engine</dt><dd>Unreal Engine 5.5</dd></div>
       <div><dt>Platform</dt><dd>PC · Epic Games Store</dd></div>
-      <div><dt>Status</dt><dd><span class="dot"></span> In development</dd></div>
+      <div><dt>Status</dt><dd><span class="dot"></span> Out now</dd></div>
     </dl>
   </div>
 </section>
@@ -244,6 +262,16 @@
       radial-gradient(70% 60% at 72% 72%, hsl(calc(var(--hue) + 40) 70% 38% / .40), transparent 60%),
       var(--bg-raised);
   }
+  /* Real key art. Takes the same space as the gradient it replaces; `object-fit: cover` crops the
+     landscape image into the portrait card around `artFocus` instead of squashing it. */
+  .game-img {
+    display: block;
+    flex: 1 1 0;
+    min-height: 0;
+    width: 100%;
+    object-fit: cover;
+    background: #000;
+  }
   .game-status {
     position: absolute;
     top: .9rem;
@@ -280,7 +308,6 @@
    * eight unused selectors on every build — deleted rather than silenced, since the live copy lives in
    * the game page's own stylesheet.
    */
-  .art-note { margin: 1rem 0 0; color: #6b7481; font-size: .76rem; }
 
   /* ---------- about ---------- */
   .about-grid {
