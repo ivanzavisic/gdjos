@@ -1,7 +1,7 @@
 <script>
   import { base } from '$app/paths';
 
-  const updated = '7 September 2026';
+  const updated = '19 September 2026';
 </script>
 
 <svelte:head>
@@ -17,13 +17,6 @@
 
   <h1>WRIGGZ — Privacy Policy</h1>
   <p class="meta">Last updated: {updated}</p>
-
-  <div class="notice">
-    <strong>Pre-release.</strong> WRIGGZ has not been released yet. This policy is published in advance
-    for transparency and describes the data practices that will apply at launch. One item is marked
-    inline as not yet collected (gameplay telemetry). This page will be updated, and dated, before the
-    game becomes publicly playable.
-  </div>
 
   <p class="lead">
     This policy explains what personal data WRIGGZ collects, why we collect it, who we share it with,
@@ -108,9 +101,11 @@
       screenshot of your screen, even though the tooling offers all three.
     </li>
     <li>
-      <strong>Gameplay telemetry</strong> &mdash; queue times, match duration and similar aggregate
-      events, used to balance the game and size our servers.
-      <em>(Not yet collected &mdash; no analytics provider is integrated in any build.)</em>
+      <strong>Match records</strong> &mdash; when a match starts and ends, how long it lasted, the
+      score, and whether it ended early (for example because a player never arrived or left), used
+      to balance the game and size our servers. These records describe the <em>match</em>, not you:
+      they contain no account identifier, display name or IP address, only counts and outcomes. They
+      are stored with our game backend, Microsoft PlayFab. No separate analytics provider is used.
     </li>
   </ul>
 
@@ -350,19 +345,6 @@
     font-weight: 800;
   }
   .meta { color: var(--muted); font-size: .88rem; margin: 0 0 1.75rem; }
-
-  .notice {
-    background: rgba(34, 224, 106, .07);
-    border: 1px solid rgba(34, 224, 106, .3);
-    border-left: 3px solid var(--accent);
-    border-radius: 6px;
-    padding: .95rem 1.1rem;
-    font-size: .9rem;
-    color: #cfd8e2;
-    margin: 0 0 2rem;
-    line-height: 1.6;
-  }
-  .notice strong { color: var(--accent); }
 
   .lead { font-size: 1.05rem; color: #c8d0da; margin: 0 0 2.5rem; }
 

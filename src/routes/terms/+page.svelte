@@ -1,7 +1,7 @@
 <script>
   import { base } from '$app/paths';
 
-  const updated = '7 September 2026';
+  const updated = '19 September 2026';
 </script>
 
 <svelte:head>
@@ -17,13 +17,6 @@
 
   <h1>WRIGGZ — Terms of Service</h1>
   <p class="meta">Last updated: {updated}</p>
-
-  <div class="notice">
-    <strong>Pre-release.</strong> WRIGGZ has not been released yet. These terms are published in advance
-    for transparency and describe the rules that will apply at launch. They have not yet been reviewed by
-    a lawyer, and sections&nbsp;9 and&nbsp;11 in particular may change. This page will be updated, and
-    dated, before the game becomes publicly playable.
-  </div>
 
   <p class="lead">
     These terms govern your use of <strong>our online services for WRIGGZ</strong> &mdash; your game
@@ -235,19 +228,6 @@
     font-weight: 800;
   }
   .meta { color: var(--muted); font-size: .88rem; margin: 0 0 1.75rem; }
-
-  .notice {
-    background: rgba(34, 224, 106, .07);
-    border: 1px solid rgba(34, 224, 106, .3);
-    border-left: 3px solid var(--accent);
-    border-radius: 6px;
-    padding: .95rem 1.1rem;
-    font-size: .9rem;
-    color: #cfd8e2;
-    margin: 0 0 2rem;
-    line-height: 1.6;
-  }
-  .notice strong { color: var(--accent); }
 
   .lead { font-size: 1.05rem; color: #c8d0da; margin: 0 0 1.5rem; }
 
