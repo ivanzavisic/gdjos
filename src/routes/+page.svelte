@@ -25,10 +25,10 @@
       title: 'AGENTOS',
       genre: 'Third-person arena shooter',
       status: 'Coming soon',
-      blurb:
-        'AGENTOS is a fast third-person arena shooter where you play a small plastic robot agent armed with an oversized laser pistol whose bolts ricochet off the walls, backed by a dash, a rappel line, a shield, smoke and a remote spider-cam. Fight across dozens of themed arenas in front of cheering robot crowds, in 1V1 to 3V3 duels or in three objective modes — ORB RUSH, RAMBALL and BREACH. Between matches, collect and customise a growing roster of themed agents, shields and grapple heads.',
-      // No store page yet, so the card is not a link. The key art is the game's splash screen
-      // (Content/Data/UI/Splash.png in the game's repo), resized to 1600 x 900.
+      blurb: 'Ricochet lasers, dashes, rappels and shields — 1V1 to 3V3 duels and three modes: ORB RUSH, RAMBALL, BREACH.',
+      // No store page yet, so the card is not a link. The key art is the game's splash with no
+      // lettering on it (Content/Data/UI/SplashZeroText1920x1080.png in the game's repo), as WRIGGZ's
+      // has none - resized to 1200 x 675 WebP.
       art: '/agentos-key-art.webp',
       artFocus: '48% 40%',
       hue: 268
@@ -243,8 +243,10 @@
 
   /* ---------- games grid ---------- */
   /*
-   * 400x600 as specified. `max-width: 100%` and the aspect-ratio fallback keep it from overflowing a
-   * phone, where a fixed 400px would force the whole page to scroll sideways.
+   * 400 wide, as specified; `max-width: 100%` keeps it from overflowing a phone, where a fixed 400px
+   * would force the whole page to scroll sideways. No fixed height: every card's art is the SAME
+   * square (below), the row stretches the cards to one height, and "View game" sits on the bottom
+   * edge - so two cards line up whatever their art's own shape or their blurb's length.
    */
   .games {
     display: flex;
@@ -256,7 +258,6 @@
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 600px;
     max-width: 100%;
     background: var(--bg-card);
     border: 1px solid var(--line);
@@ -272,19 +273,18 @@
     transform: translateY(-3px);
   }
   .game-art {
-    flex: 1 1 auto;
+    flex: none;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     background:
       radial-gradient(75% 65% at 32% 28%, hsl(var(--hue) 70% 42% / .55), transparent 62%),
       radial-gradient(70% 60% at 72% 72%, hsl(calc(var(--hue) + 40) 70% 38% / .40), transparent 60%),
       var(--bg-raised);
   }
-  /* Real key art. Takes the same space as the gradient it replaces; `object-fit: cover` crops the
-     landscape image into the portrait card around `artFocus` instead of squashing it. */
+  /* Real key art. Takes the same square as the gradient it replaces; `object-fit: cover` crops the
+     landscape image around `artFocus` instead of squashing it. */
   .game-img {
     display: block;
-    flex: 1 1 0;
-    min-height: 0;
-    width: 100%;
     object-fit: cover;
     background: #000;
   }
@@ -305,6 +305,7 @@
     color: var(--muted);
   }
   .game-body {
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     gap: .4rem;
@@ -315,13 +316,12 @@
   .game-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -.01em; }
   .game-genre { font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
   .game-blurb { color: var(--muted); font-size: .95rem; line-height: 1.5; }
-  .game-more { margin-top: .35rem; font-size: .88rem; color: var(--text); opacity: .75; }
+  .game-more { margin-top: auto; padding-top: .35rem; font-size: .88rem; color: var(--text); opacity: .75; }
   .game-card:hover .game-more { opacity: 1; }
 
   /* A game with no page to go to yet: not a link, so it does not lift or light up on hover. */
   .game-card.soon:hover { border-color: var(--line); transform: none; }
   .soon .game-more { color: var(--muted); }
-  .soon .game-art { flex: 1 1 0; min-height: 0; }
   /* The placeholder's wordmark, until there is key art: faint, so it reads as art and not as a title. */
   .game-art { position: relative; display: block; overflow: hidden; }
   .game-mark {
