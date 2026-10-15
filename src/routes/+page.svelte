@@ -27,7 +27,10 @@
       status: 'Coming soon',
       blurb:
         'AGENTOS is a fast third-person arena shooter where you play a small plastic robot agent armed with an oversized laser pistol whose bolts ricochet off the walls, backed by a dash, a rappel line, a shield, smoke and a remote spider-cam. Fight across dozens of themed arenas in front of cheering robot crowds, in 1V1 to 3V3 duels or in three objective modes — ORB RUSH, RAMBALL and BREACH. Between matches, collect and customise a growing roster of themed agents, shields and grapple heads.',
-      // No store page and no key art yet: the card draws the gradient placeholder in this hue.
+      // No store page yet, so the card is not a link. The key art is the game's splash screen
+      // (Content/Data/UI/Splash.png in the game's repo), resized to 1600 x 900.
+      art: '/agentos-key-art.webp',
+      artFocus: '48% 40%',
       hue: 268
     }
   ];
@@ -57,7 +60,6 @@
 
     <div class="hero-cta">
       <a class="btn btn-primary" href="#games">SEE OUR GAMES</a>
-      <span class="cta-note">WRIGGZ is out now · AGENTOS is coming soon</span>
     </div>
   </div>
 </section>
@@ -66,7 +68,6 @@
 <section class="section" id="games">
   <div class="section-head">
     <h2>Games</h2>
-    <p>What we are building. Two titles: one out now, one on the way.</p>
   </div>
 
   <div class="games">
@@ -128,7 +129,6 @@
       <div><dt>Based in</dt><dd>Croatia</dd></div>
       <div><dt>Engine</dt><dd>Unreal Engine 5.5</dd></div>
       <div><dt>Platform</dt><dd>PC · Epic Games Store</dd></div>
-      <div><dt>Games</dt><dd><span class="dot"></span> WRIGGZ out now · AGENTOS coming soon</dd></div>
     </dl>
   </div>
 </section>
@@ -225,7 +225,6 @@
     color: #05210f;
     cursor: default;
   }
-  .cta-note { color: var(--muted); font-size: .84rem; }
 
   /* ---------- sections ---------- */
   .section {
@@ -372,14 +371,6 @@
   .facts > div:last-child { border-bottom: 0; }
   .facts dt { color: var(--muted); }
   .facts dd { margin: 0; font-weight: 600; text-align: right; }
-  .dot {
-    display: inline-block;
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--accent);
-    margin-right: .4rem;
-    vertical-align: middle;
-  }
 
   /* ---------- contact ---------- */
   .contact p { color: #c2cad4; margin: 0 0 .5rem; }

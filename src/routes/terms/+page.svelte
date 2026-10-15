@@ -1,41 +1,50 @@
 <script>
   import { base } from '$app/paths';
-
-  const updated = '19 September 2026';
+  /*
+   * ONE set of terms for every GameDevJug game (2026-10-15), as the privacy policy became the same day.
+   * It used to be written around WRIGGZ alone; every obligation is kept, worded so it holds for each game
+   * we publish, and what only some games have is said to apply "in games that offer it". The URL stays
+   * /terms/ - the home page, the WRIGGZ page and the footer link to it.
+   */
+  const updated = '15 October 2026';
+  const previous = '19 September 2026';
 </script>
 
 <svelte:head>
-  <title>WRIGGZ — Terms of Service | GameDevJug</title>
+  <title>Terms of Service | GameDevJug</title>
   <meta
     name="description"
-    content="Terms of Service for the WRIGGZ online services: your game account, acceptable use, cheating penalties, account termination, and in-game currency."
+    content="Terms of Service for the online services of GameDevJug's games: your game account, acceptable use, cheating penalties, account termination, and in-game currency."
   />
 </svelte:head>
 
 <article class="policy">
   <p class="crumb"><a href="{base}/">&larr; GameDevJug</a></p>
 
-  <h1>WRIGGZ — Terms of Service</h1>
-  <p class="meta">Last updated: {updated}</p>
+  <h1>Terms of Service</h1>
+  <p class="meta">Last updated: {updated} &middot; Previous version: {previous}</p>
 
   <p class="lead">
-    These terms govern your use of <strong>our online services for WRIGGZ</strong> &mdash; your game
-    account, your progression and statistics, your in-game currency and items, and matchmaking.
+    These terms govern your use of <strong>the online services of our games</strong> &mdash; your game
+    account, your progression and statistics, your in-game currency and items, and matchmaking. They
+    apply to every game GameDevJug publishes, now and in the future. Where something applies only to the
+    games or features that have it, these terms say so.
   </p>
 
   <div class="addr">
     <strong>Operator:</strong> JASPERO d.o.o., OIB 38473301731, Drniška ulica 9, Osijek, Croatia
     ("we", "us").<br />
-    <strong>Game:</strong> WRIGGZ ("the Game").<br />
+    <strong>Games:</strong> every game published by GameDevJug, currently WRIGGZ and AGENTOS (in
+    development) (together "the Games", each one "a Game").<br />
     <strong>Studio brand:</strong> GameDevJug.
   </div>
 
   <h2>1. What these terms cover</h2>
   <p>
-    By playing the Game you accept these terms. If you do not accept them, do not play.
+    By playing a Game you accept these terms. If you do not accept them, do not play.
   </p>
   <p>
-    <strong>These are not the purchase terms.</strong> WRIGGZ is distributed through the Epic Games
+    <strong>These are not the purchase terms.</strong> Our Games are distributed through the Epic Games
     Store, and purchases, refunds and payment are governed by Epic's own Store terms and end user
     licence agreement. Where these terms and Epic's conflict on anything to do with buying, Epic's
     govern.
@@ -44,8 +53,9 @@
   <h2>2. Your account</h2>
   <ul>
     <li>
-      Your Game account is created automatically from your Epic account the first time you sign in. You
-      do not choose a password with us and <strong>we never see your Epic credentials</strong>.
+      Your account in a Game is created automatically from your Epic account the first time you sign in
+      to that Game. You do not choose a password with us and
+      <strong>we never see your Epic credentials</strong>.
     </li>
     <li>
       The account is <strong>personal to you</strong>. Do not share it, sell it, buy one, or let anyone
@@ -67,7 +77,8 @@
     </li>
     <li>
       <strong>Attack the service.</strong> No attempts to overload, probe, reverse-engineer or gain
-      unauthorised access to our servers, matchmaking or backend.
+      unauthorised access to our servers, matchmaking or backend &mdash; or, in a peer-to-peer match,
+      to the other players' games and connections.
     </li>
     <li>
       <strong>Abuse other players.</strong> No harassment, hate speech, threats, or deliberately
@@ -78,15 +89,18 @@
       ratings.
     </li>
     <li>
-      <strong>Sell or trade</strong> accounts, in-game currency or items outside the Game.
+      <strong>Sell or trade</strong> accounts, in-game currency or items outside the Game they belong
+      to.
     </li>
   </ul>
 
   <h2>4. In-game currency and items</h2>
+  <p>In games that have in-game currency or items:</p>
   <ul>
     <li>
       In-game currency and items have <strong>no monetary value</strong>, cannot be exchanged for
-      money, and are a limited licence to use them inside the Game &mdash; not property you own.
+      money, and are a limited licence to use them inside the Game they belong to &mdash; not property
+      you own.
     </li>
     <li>
       They are <strong>cosmetic</strong>. They do not affect gameplay balance, and we intend to keep it
@@ -96,37 +110,40 @@
       We may add, change, retire or re-price items. We will not remove something you have already
       bought from your account except as described in section&nbsp;6.
     </li>
-    <li>Currency and items are <strong>not transferable between accounts</strong>.</li>
+    <li>
+      Currency and items are <strong>not transferable between accounts</strong>, or from one Game to
+      another.
+    </li>
   </ul>
 
   <h2>5. Fair play, matchmaking and ratings</h2>
   <ul>
     <li>
-      Matchmaking, teams, match results, ratings, progression and currency are
-      <strong>decided and recorded by our servers</strong>. Your game client's copy is a display of our
-      record, and where they differ ours is authoritative.
+      Where a Game keeps them on our servers, matchmaking, teams, match results, ratings, progression
+      and currency are <strong>decided and recorded by our servers</strong>. Your game client's copy is
+      a display of our record, and where they differ ours is authoritative.
     </li>
     <li>
       We may adjust or reset ratings, statistics, currency or items where we find they resulted from
       cheating, an exploit, or a fault of ours.
     </li>
     <li>
-      <strong>Reporting another player.</strong> After a match you can report someone for cheating,
-      abuse or deliberately ruining the game. Reports are <strong>recorded on our servers</strong> and
-      used to investigate conduct and decide enforcement &mdash; see section&nbsp;5 of the
-      <a href="{base}/privacy-policy/">Privacy Policy</a> for exactly what a report records and how
-      long we keep it. We do not tell the reported player who reported them, and we do not act on a
-      single report alone. <strong>Do not abuse reporting</strong> &mdash; deliberately filing false
-      reports is itself a breach of section&nbsp;3.
+      <strong>Reporting another player.</strong> In games that offer it, after a match you can report
+      someone for cheating, abuse or deliberately ruining the game. Reports are
+      <strong>recorded on our servers</strong> and used to investigate conduct and decide enforcement
+      &mdash; see section&nbsp;5 of the <a href="{base}/privacy-policy/">Privacy Policy</a> for exactly
+      what a report records and how long we keep it. We do not tell the reported player who reported
+      them, and we do not act on a single report alone. <strong>Do not abuse reporting</strong> &mdash;
+      deliberately filing false reports is itself a breach of section&nbsp;3.
     </li>
   </ul>
 
   <h2>6. Suspension and termination</h2>
   <ul>
     <li>
-      We may suspend or terminate your access to our online services if you breach these terms &mdash;
-      immediately and without notice where the breach is serious, such as cheating or attacking the
-      service.
+      We may suspend or terminate your access to a Game's online services, or to all of them, if you
+      breach these terms &mdash; immediately and without notice where the breach is serious, such as
+      cheating or attacking the service.
     </li>
     <li>
       <strong
@@ -138,22 +155,27 @@
       You can stop using the services at any time, and you can ask us to delete your account &mdash;
       see section&nbsp;8.
     </li>
-    <li>If we discontinue the Game's online services, we will give reasonable notice where we can.</li>
+    <li>If we discontinue a Game's online services, we will give reasonable notice where we can.</li>
   </ul>
 
   <h2>7. The service is provided as it is</h2>
   <ul>
     <li>
-      The Game's online services are provided <strong>as available</strong>. We do not promise they
+      Our Games' online services are provided <strong>as available</strong>. We do not promise they
       will be uninterrupted, or that matchmaking will always find you a match.
     </li>
     <li>
       We may change, suspend or discontinue features, and we may take servers down for maintenance.
     </li>
     <li>
-      The Game <strong>requires an internet connection</strong> for its online features. Some parts
+      Our Games <strong>require an internet connection</strong> for their online features. Some parts
       &mdash; the store, your progression, your unlocked content &mdash; are unavailable while you are
       offline, by design.
+    </li>
+    <li>
+      In games that connect players to one another directly (<strong>peer to peer</strong>), one
+      player's game hosts the match. If the host leaves or loses their connection, the match may end
+      for everyone in it.
     </li>
   </ul>
 
@@ -164,20 +186,22 @@
   </p>
   <ul>
     <li>
-      <strong>You can export your data from inside the Game:</strong> Settings → Account → Export My
-      Data.
+      <strong>You can export your data from inside the Game</strong> in games that offer it: Settings →
+      Account → Export My Data. In any Game you can also ask us for a copy by email (see section&nbsp;8
+      of the <a href="{base}/privacy-policy/">Privacy Policy</a>).
     </li>
     <li>
-      <strong>You can request deletion of your account</strong> from inside the Game (Settings →
-      Account → Request Deletion), or by writing to
-      <a href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a>. Deletion is permanent and includes
-      your progression, currency and purchased items, which <strong>cannot be restored afterwards</strong>.
+      <strong>You can request deletion of your account</strong> from inside the Game in games that offer
+      it (Settings → Account → Request Deletion), or in any Game by writing to
+      <a href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a> with the Game and your in-game
+      display name. Deletion is permanent and includes your progression, currency and purchased items in
+      that Game, which <strong>cannot be restored afterwards</strong>.
     </li>
   </ul>
 
   <h2>9. Children</h2>
   <p>
-    The Game is <strong>not intended for children under 13</strong>, and we do not knowingly create
+    Our Games are <strong>not intended for children under 13</strong>, and we do not knowingly create
     accounts for them. Where local law sets a higher age for children's online services, that age
     applies. See the <a href="{base}/privacy-policy/">Privacy Policy</a> for what this means in
     practice.
@@ -185,8 +209,9 @@
 
   <h2>10. Changes to these terms</h2>
   <p>
-    We may update these terms. If a change materially affects you we will give notice in the Game or on
-    this website before it takes effect. Continuing to play after that means you accept the change.
+    We may update these terms, including as we release new Games. If a change materially affects you we
+    will give notice in the affected Game or on this website before it takes effect. Continuing to play
+    after that means you accept the change.
   </p>
 
   <h2>11. Law and disputes</h2>
