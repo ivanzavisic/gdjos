@@ -55,12 +55,12 @@
       </div>
       <nav class="foot-links" aria-label="Legal">
         <!--
-          Two privacy documents, deliberately. `/privacy-policy/` is the GAME's policy (long, goes in
-          Epic's Product → EAS Brand settings); `/privacy` is the COMPANY notice (short, goes in
+          Two privacy documents, deliberately. `/privacy-policy/` is the GAMES' policy, one for every
+          game we publish (long, goes in each Epic Product → EAS Brand settings); `/privacy` is the COMPANY notice (short, goes in
           Organization → General Settings, P0-EAS-5). They are different documents for different
           portal fields — do not "tidy" one away.
         -->
-        <a href="{base}/privacy-policy/">Game Privacy Policy</a>
+        <a href="{base}/privacy-policy/">Games Privacy Policy</a>
         <a href="{base}/privacy/">Company Privacy</a>
         <a href="{base}/terms/">Terms of Service</a>
         <a href="mailto:gamedevjug@gmail.com">Contact</a>

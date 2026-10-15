@@ -2,9 +2,10 @@
   import { base } from '$app/paths';
 
   /**
-   * The studio's catalogue. Exactly one entry, because exactly one game exists — a showcase that
-   * lists games that do not exist is the fastest way to lose a reader's trust. The grid is built to
-   * take more entries without changing anything but this array.
+   * The studio's catalogue: one entry per game that exists — a showcase that lists games that do not
+   * exist is the fastest way to lose a reader's trust. The grid takes more entries without changing
+   * anything but this array. An entry with no `href` is not a link (no store page yet): it shows its
+   * status instead of "View game".
    */
   const games = [
     {
@@ -19,6 +20,15 @@
       // Where the character sits in the art, so a portrait card crops around it rather than the centre.
       artFocus: '30% 45%',
       hue: 158
+    },
+    {
+      title: 'AGENTOS',
+      genre: 'Third-person arena shooter',
+      status: 'Coming soon',
+      blurb:
+        'AGENTOS is a fast third-person arena shooter where you play a small plastic robot agent armed with an oversized laser pistol whose bolts ricochet off the walls, backed by a dash, a rappel line, a shield, smoke and a remote spider-cam. Fight across dozens of themed arenas in front of cheering robot crowds, in 1V1 to 3V3 duels or in three objective modes — ORB RUSH, RAMBALL and BREACH. Between matches, collect and customise a growing roster of themed agents, shields and grapple heads.',
+      // No store page and no key art yet: the card draws the gradient placeholder in this hue.
+      hue: 268
     }
   ];
 </script>
@@ -27,7 +37,7 @@
   <title>GameDevJug — independent game studio</title>
   <meta
     name="description"
-    content="GameDevJug is an independent game studio building WRIGGZ, a fast-paced competitive arena shooter for PC."
+    content="GameDevJug is an independent game studio making WRIGGZ, a fast-paced competitive arena shooter for PC, and AGENTOS, a third-person robot arena shooter coming soon."
   />
 </svelte:head>
 
@@ -47,7 +57,7 @@
 
     <div class="hero-cta">
       <a class="btn btn-primary" href="#games">SEE OUR GAMES</a>
-      <span class="cta-note">WRIGGZ is out now · More when they are real</span>
+      <span class="cta-note">WRIGGZ is out now · AGENTOS is coming soon</span>
     </div>
   </div>
 </section>
@@ -56,16 +66,18 @@
 <section class="section" id="games">
   <div class="section-head">
     <h2>Games</h2>
-    <p>What we are building. One title today, and we will not pad this list until there are more.</p>
+    <p>What we are building. Two titles: one out now, one on the way.</p>
   </div>
 
   <div class="games">
     {#each games as g}
-      <a
+      <svelte:element
+        this={g.href ? 'a' : 'article'}
         class="game-card"
-        href={g.external ? g.href : `${base}${g.href}`}
-        target={g.external ? '_blank' : undefined}
-        rel={g.external ? 'noopener' : undefined}
+        class:soon={!g.href}
+        href={g.href ? (g.external ? g.href : `${base}${g.href}`) : undefined}
+        target={g.href && g.external ? '_blank' : undefined}
+        rel={g.href && g.external ? 'noopener' : undefined}
         style="--hue: {g.hue}"
       >
         {#if g.art}
@@ -77,16 +89,20 @@
             style="object-position: {g.artFocus ?? 'center'}"
           />
         {:else}
-          <span class="game-art" aria-hidden="true"></span>
+          <span class="game-art" aria-hidden="true"><span class="game-mark">{g.title}</span></span>
         {/if}
         <span class="game-status">{g.status}</span>
         <span class="game-body">
           <span class="game-title">{g.title}</span>
           <span class="game-genre">{g.genre}</span>
           <span class="game-blurb">{g.blurb}</span>
-          <span class="game-more">View game →</span>
+          {#if g.href}
+            <span class="game-more">View game →</span>
+          {:else}
+            <span class="game-more">No store page yet</span>
+          {/if}
         </span>
-      </a>
+      </svelte:element>
     {/each}
   </div>
 </section>
@@ -98,8 +114,9 @@
       <h2>About the studio</h2>
       <p>
         GameDevJug is a small independent studio in Croatia. We build competitive multiplayer games
-        for PC — currently WRIGGZ, an arena shooter running on dedicated servers with
-        backend-driven matchmaking and progression.
+        for PC — WRIGGZ, an arena shooter running on dedicated servers with backend-driven
+        matchmaking and progression, out now; and AGENTOS, a third-person robot arena shooter, in
+        development.
       </p>
       <p class="about-legal">
         GameDevJug is a brand of <strong>JASPERO d.o.o.</strong>, a company registered in
@@ -111,7 +128,7 @@
       <div><dt>Based in</dt><dd>Croatia</dd></div>
       <div><dt>Engine</dt><dd>Unreal Engine 5.5</dd></div>
       <div><dt>Platform</dt><dd>PC · Epic Games Store</dd></div>
-      <div><dt>Status</dt><dd><span class="dot"></span> Out now</dd></div>
+      <div><dt>Games</dt><dd><span class="dot"></span> WRIGGZ out now · AGENTOS coming soon</dd></div>
     </dl>
   </div>
 </section>
@@ -124,7 +141,7 @@
     <a class="mail" href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a>
   </p>
   <p class="privacy-link">
-    See our <a href="{base}/privacy-policy/">Privacy Policy</a> for what data WRIGGZ collects and why,
+    See our <a href="{base}/privacy-policy/">Privacy Policy</a> for what data our games collect and why,
     and our <a href="{base}/terms/">Terms of Service</a> for the rules of the online services.
   </p>
 </section>
@@ -301,6 +318,25 @@
   .game-blurb { color: var(--muted); font-size: .95rem; line-height: 1.5; }
   .game-more { margin-top: .35rem; font-size: .88rem; color: var(--text); opacity: .75; }
   .game-card:hover .game-more { opacity: 1; }
+
+  /* A game with no page to go to yet: not a link, so it does not lift or light up on hover. */
+  .game-card.soon:hover { border-color: var(--line); transform: none; }
+  .soon .game-more { color: var(--muted); }
+  .soon .game-art { flex: 1 1 0; min-height: 0; }
+  /* The placeholder's wordmark, until there is key art: faint, so it reads as art and not as a title. */
+  .game-art { position: relative; display: block; overflow: hidden; }
+  .game-mark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.4rem;
+    font-weight: 900;
+    letter-spacing: -.03em;
+    color: rgba(255, 255, 255, .07);
+    user-select: none;
+  }
 
   /*
    * The `.cards` / `.card-*` rules that used to sit here were dead: the game-mode cards they styled

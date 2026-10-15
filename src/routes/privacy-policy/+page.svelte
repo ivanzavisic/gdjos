@@ -1,27 +1,35 @@
 <script>
   import { base } from '$app/paths';
 
-  const updated = '19 September 2026';
+  /*
+   * ONE policy for every GameDevJug game (2026-10-15). It used to be written around WRIGGZ alone; the
+   * facts are the same, worded so they hold for each game we publish. Epic's Account Services brand
+   * settings link to THIS URL, so the route stays /privacy-policy/ - do not move it.
+   */
+  const updated = '15 October 2026';
+  const previous = '19 September 2026';
 </script>
 
 <svelte:head>
-  <title>WRIGGZ — Privacy Policy | GameDevJug</title>
+  <title>Privacy Policy | GameDevJug</title>
   <meta
     name="description"
-    content="What personal data the game WRIGGZ collects, why, who it is shared with, and the rights you have over it."
+    content="What personal data GameDevJug's games collect, why, who it is shared with, and the rights you have over it."
   />
 </svelte:head>
 
 <article class="policy">
   <p class="crumb"><a href="{base}/">&larr; GameDevJug</a></p>
 
-  <h1>WRIGGZ — Privacy Policy</h1>
-  <p class="meta">Last updated: {updated}</p>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: {updated} &middot; Previous version: {previous}</p>
 
   <p class="lead">
-    This policy explains what personal data WRIGGZ collects, why we collect it, who we share it with,
-    and what rights you have over it. WRIGGZ is an online multiplayer game distributed through the
-    Epic Games Store. Playing it requires an Epic Games account and an internet connection.
+    This policy explains what personal data our games collect, why we collect it, who we share it
+    with, and what rights you have over it. It applies to every game GameDevJug publishes, now and in
+    the future, and to the online services that come with them. Our games are online multiplayer games
+    distributed through the Epic Games Store; playing them online requires an Epic Games account and an
+    internet connection.
   </p>
 
   <h2>1. Who we are</h2>
@@ -31,8 +39,8 @@
     <em>data controller</em> for the personal data described in this policy.
   </p>
   <p>
-    <strong>GameDevJug</strong> is the studio brand we publish under, and WRIGGZ is our game. If you
-    see "GameDevJug" on a store page and "JASPERO d.o.o." in a legal notice, they refer to the same
+    <strong>GameDevJug</strong> is the studio brand we publish our games under. If you see
+    "GameDevJug" on a store page and "JASPERO d.o.o." in a legal notice, they refer to the same
     operation: the brand is the name, the company is the legal entity responsible for your data.
   </p>
   <p>Privacy contact: <a href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a></p>
@@ -44,19 +52,23 @@
     does not create a profile of you. Our host records standard server access logs, which may include
     your IP address, for security and reliability.
   </p>
-  <p>The rest of this policy is about the <em>game</em>, where we do process personal data.</p>
+  <p>The rest of this policy is about our <em>games</em>, where we do process personal data.</p>
 
   <h2>3. What we collect</h2>
+  <p>
+    Each game collects only what it needs from the list below. Where something applies only to the
+    games or features that have it, this policy says so.
+  </p>
 
   <h3>3.1 Data we receive from Epic Games</h3>
   <p>
-    When you sign in, we use Epic Account Services. We never see or receive your Epic password. Epic
-    provides us with:
+    When you sign in to one of our games, we use Epic Account Services. We never see or receive your
+    Epic password. Epic provides us with:
   </p>
   <ul>
     <li>
       <strong>EOS Product User ID</strong> &mdash; a game-scoped identifier that links your play
-      session to your game profile. This is the identifier your player record is keyed on.
+      session to your profile in that game. This is the identifier your player record is keyed on.
     </li>
     <li><strong>Display name</strong> &mdash; shown to other players in matches, scoreboards and menus.</li>
   </ul>
@@ -67,7 +79,7 @@
   </p>
 
   <h3>3.2 Game account and progression data</h3>
-  <p>We keep a player record, keyed to your EOS Product User ID, containing:</p>
+  <p>For each game you play, we keep a player record, keyed to your EOS Product User ID, containing:</p>
   <table>
     <thead><tr><th>Data</th><th>Why</th></tr></thead>
     <tbody>
@@ -76,7 +88,7 @@
       <tr><td>Matches played, wins, losses, in-game statistics</td><td>Show your record and drive progression</td></tr>
       <tr><td>Experience points (your level is calculated from this)</td><td>Progression and unlocks</td></tr>
       <tr><td>In-game currency balance, items and cosmetics owned</td><td>Run the in-game shop and inventory</td></tr>
-      <tr><td>Champion selection and game settings</td><td>Remember your choices between sessions</td></tr>
+      <tr><td>Character selection and game settings</td><td>Remember your choices between sessions</td></tr>
       <tr><td>Account creation date and last sign-in time</td><td>Account security and housekeeping</td></tr>
     </tbody>
   </table>
@@ -84,15 +96,19 @@
   <h3>3.3 Technical and connection data</h3>
   <ul>
     <li>
-      <strong>IP address</strong> &mdash; necessarily processed to connect you to a game server, to
-      measure latency to each region, and to place you on a nearby server.
+      <strong>IP address</strong> &mdash; necessarily processed to connect you to a match, to measure
+      latency to each region, and to place you on a nearby server. Where a game runs its matches on our
+      dedicated servers, other players never receive it. Where a game connects players to one another
+      directly (peer to peer, with one player's game hosting the match), the other games in that match
+      receive the connection information needed to reach yours, which can include your IP address;
+      Epic Online Services may relay that connection.
     </li>
     <li>
       <strong>Device and system information</strong> &mdash; operating system, hardware and graphics
       configuration, and game version, used for compatibility and troubleshooting.
     </li>
     <li>
-      <strong>Diagnostic logs and crash reports</strong> &mdash; automatically generated if the game
+      <strong>Diagnostic logs and crash reports</strong> &mdash; automatically generated if a game
       malfunctions, so we can fix it. This is handled by <strong>Sentry</strong> and covers the crash
       itself, the state of the game at that moment, and the log leading up to it — the technical
       information needed to find the fault.
@@ -103,7 +119,7 @@
     <li>
       <strong>Match records</strong> &mdash; when a match starts and ends, how long it lasted, the
       score, and whether it ended early (for example because a player never arrived or left), used
-      to balance the game and size our servers. These records describe the <em>match</em>, not you:
+      to balance our games and size our servers. These records describe the <em>match</em>, not you:
       they contain no account identifier, display name or IP address, only counts and outcomes. They
       are stored with our game backend, Microsoft PlayFab. No separate analytics provider is used.
     </li>
@@ -118,14 +134,14 @@
     </li>
     <li>We do not collect your real name, postal address or phone number.</li>
     <li>We do not use advertising trackers, and <strong>we do not sell your data</strong>.</li>
-    <li>We do not use voice or text chat, so we do not record either.</li>
+    <li>Our games have no voice or text chat, so we do not record either.</li>
   </ul>
 
   <h2>4. Why we process it, and our legal basis</h2>
   <table>
     <thead><tr><th>Purpose</th><th>Legal basis (GDPR Art. 6)</th></tr></thead>
     <tbody>
-      <tr><td>Providing the game: authentication, matchmaking, running matches, saving progress</td><td>Performance of a contract (Art. 6(1)(b))</td></tr>
+      <tr><td>Providing our games: authentication, matchmaking, running matches, saving progress</td><td>Performance of a contract (Art. 6(1)(b))</td></tr>
       <tr><td>Verifying that you own a purchasable item before granting it</td><td>Performance of a contract (Art. 6(1)(b))</td></tr>
       <tr><td>Preventing cheating, abuse and fraud; enforcing our rules</td><td>Legitimate interests (Art. 6(1)(f)) &mdash; keeping matches fair for all players</td></tr>
       <tr><td>Diagnosing crashes and improving stability and balance</td><td>Legitimate interests (Art. 6(1)(f))</td></tr>
@@ -135,27 +151,27 @@
 
   <h2>5. Fair play, enforcement and automated decisions</h2>
   <p>
-    <strong>There is no anti-cheat software in WRIGGZ.</strong> Nothing in the game inspects your
-    system, your processes, or any software outside WRIGGZ itself, and nothing installs a driver or a
-    background service. If that ever changes we will say so here, and date it, before the build that
-    contains it is released.
+    <strong>There is no anti-cheat software in our games.</strong> Nothing in them inspects your
+    system, your processes, or any software outside the game itself, and nothing installs a driver or
+    a background service. If that ever changes for any of our games we will say so here, and date it,
+    before the build that contains it is released.
   </p>
   <p>
-    What we do instead is enforce the rules <strong>on our own servers</strong>. Every match runs on a
-    server we control, and that server &mdash; not your game &mdash; decides what actually happened.
+    What we do instead is enforce the rules <strong>on our own servers</strong>. Where a match runs on a
+    server we control, that server &mdash; not your game &mdash; decides what actually happened.
     Actions that are impossible for a legitimate client, such as moving further in one moment than the
     game allows or firing faster than the weapon permits, are rejected and recorded. This looks only
     at what your game sends us over the network. It cannot and does not see anything else on your
     computer.
   </p>
   <p>
-    <strong>Player reports.</strong> After a match you can report another player for cheating, abuse
-    or deliberately ruining the game. When you do, our game server records the report in its match
-    log: <strong>who reported whom</strong> (both players' account identifiers and display names) and
-    <strong>when</strong>. It does not record a reason, a message, or anything you type &mdash; there
-    is no free-text field. We use these records to investigate conduct and to decide enforcement, and
-    we keep them because a single report rarely means much while a pattern of them does. The player
-    you report is not told who reported them.
+    <strong>Player reports.</strong> In games that offer it, after a match you can report another
+    player for cheating, abuse or deliberately ruining the game. When you do, our game server records
+    the report in its match log: <strong>who reported whom</strong> (both players' account identifiers
+    and display names) and <strong>when</strong>. It does not record a reason, a message, or anything
+    you type &mdash; there is no free-text field. We use these records to investigate conduct and to
+    decide enforcement, and we keep them because a single report rarely means much while a pattern of
+    them does. The player you report is not told who reported them.
   </p>
   <p>
     <strong>Automated decisions.</strong> <strong>We do not currently suspend or ban anyone
@@ -168,11 +184,14 @@
   </p>
 
   <h2>6. Who we share data with</h2>
-  <p>We use the following service providers, who process data on our instructions:</p>
+  <p>
+    We use the following service providers, who process data on our instructions. Not every game uses
+    every provider; each one processes data only for the games and features that use it.
+  </p>
   <table>
     <thead><tr><th>Provider</th><th>Role</th></tr></thead>
     <tbody>
-      <tr><td>Epic Games, Inc.</td><td>Account sign-in (Epic Account Services), store distribution, purchases</td></tr>
+      <tr><td>Epic Games, Inc.</td><td>Account sign-in (Epic Account Services), Epic Online Services (including peer-to-peer connections), store distribution, purchases</td></tr>
       <tr><td>Microsoft (PlayFab)</td><td>Player account database and progression storage</td></tr>
       <tr><td>Edgegap</td><td>Game server hosting and matchmaking</td></tr>
       <tr><td>Cloudflare, Inc. (R2)</td><td>Storage for game server match logs after a match ends</td></tr>
@@ -186,8 +205,8 @@
     </tbody>
   </table>
   <p>
-    Other players see only your display name, your in-match performance, and cosmetics you have
-    equipped.
+    Other players see your display name, your in-match performance, and cosmetics you have equipped
+    &mdash; and, in a peer-to-peer match, the connection information described in section&nbsp;3.3.
   </p>
   <p>
     We may also disclose data where legally required, or to establish, exercise or defend legal
@@ -209,14 +228,14 @@
   <h2>7. How long we keep it</h2>
   <ul>
     <li>
-      <strong>Player account and progression data</strong> &mdash; for as long as your account is
-      active, and for up to <strong>24 months</strong> after your last sign-in, after which it is
-      deleted or anonymised.
+      <strong>Player account and progression data</strong> &mdash; for as long as your account in a
+      game is active, and for up to <strong>24 months</strong> after your last sign-in to that game,
+      after which it is deleted or anonymised.
     </li>
     <li><strong>Diagnostic logs and crash reports</strong> &mdash; up to <strong>90 days</strong>.</li>
     <li>
-      <strong>Game server match logs</strong> &mdash; up to <strong>90 days</strong>. Each match runs
-      on its own server, and that server's log is copied to our log storage when the match ends.
+      <strong>Game server match logs</strong> &mdash; up to <strong>90 days</strong>. Where each match
+      runs on its own server, that server's log is copied to our log storage when the match ends.
       These logs contain account identifiers, display names, connection information and any
       <strong>player reports</strong> made during the match (see section&nbsp;5).
     </li>
@@ -249,9 +268,9 @@
   </ul>
   <p>
     To exercise any of these, email
-    <a href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a> and include your in-game display
-    name so we can locate your record. We respond within one month. Deleting your game account does
-    not delete your Epic account &mdash; for data Epic holds, use Epic's own privacy tools.
+    <a href="mailto:gamedevjug@gmail.com">gamedevjug@gmail.com</a> and include the game and your
+    in-game display name so we can locate your record. We respond within one month. Deleting your game
+    account does not delete your Epic account &mdash; for data Epic holds, use Epic's own privacy tools.
   </p>
   <p>
     You also have the right to complain to a data protection authority. In Croatia this is the
@@ -269,7 +288,7 @@
 
   <h2>9. Children</h2>
   <p>
-    WRIGGZ is not directed at children under 13, and we do not knowingly collect personal data from
+    Our games are not directed at children under 13, and we do not knowingly collect personal data from
     them. Where local law sets a higher age for children's online services, that age applies and a
     parent or guardian must consent. If you believe a child has provided us with personal data,
     contact us and we will delete it.
@@ -284,7 +303,7 @@
   <p>
     Data is transmitted over encrypted connections (HTTPS/TLS) and stored with reputable providers
     under access controls. Match results, currency, item entitlements and skill ratings are written
-    only by our game servers, never by the game client &mdash; so a modified game cannot award itself
+    only by our servers, never by the game client &mdash; so a modified game cannot award itself
     progress, currency or items. No system is perfectly secure, but we take reasonable technical and
     organisational measures to protect your data.
   </p>
@@ -299,9 +318,9 @@
 
   <h2>12. Changes to this policy</h2>
   <p>
-    We may update this policy as the game changes. The "last updated" date at the top always reflects
-    the current version. If a change materially affects your rights, we will give notice in-game or
-    through the store page before it takes effect.
+    We may update this policy as our games change or as we release new ones. The "last updated" date
+    at the top always reflects the current version. If a change materially affects your rights, we will
+    give notice in the affected game or through its store page before it takes effect.
   </p>
 
   <h2>13. Contact</h2>

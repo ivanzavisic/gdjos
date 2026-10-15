@@ -20,9 +20,9 @@
 
   <div class="notice">
     <strong>This is the company notice, not the game policy.</strong> It covers this website and
-    business correspondence. If you are looking for what data <strong>WRIGGZ</strong> collects when you
-    play it, that is a separate and much longer document:
-    <a href="{base}/privacy-policy/">the WRIGGZ Privacy Policy</a>.
+    business correspondence. If you are looking for what data <strong>our games</strong> collect when you
+    play them, that is a separate and much longer document:
+    <a href="{base}/privacy-policy/">the GameDevJug Games Privacy Policy</a>.
   </div>
 
   <h2>1. Who we are</h2>
