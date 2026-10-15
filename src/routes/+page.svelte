@@ -4,10 +4,22 @@
   /**
    * The studio's catalogue: one entry per game that exists — a showcase that lists games that do not
    * exist is the fastest way to lose a reader's trust. The grid takes more entries without changing
-   * anything but this array. An entry with no `href` is not a link (no store page yet): it shows its
-   * status instead of "View game".
+   * anything but this array, shown in its order (newest game first). An entry with no `href` is not
+   * a link (no store page yet): it shows its status instead of "View game".
    */
   const games = [
+    {
+      title: 'AGENTOS',
+      genre: 'Third-person arena shooter',
+      status: 'Coming soon',
+      blurb: 'Ricochet lasers, dashes, rappels and shields — 1V1 to 3V3 duels and three modes: ORB RUSH, RAMBALL, BREACH.',
+      // No store page yet, so the card is not a link. The key art is the game's splash with no
+      // lettering on it (Content/Data/UI/SplashZeroText1920x1080.png in the game's repo), as WRIGGZ's
+      // has none - resized to 1200 x 675 WebP.
+      art: '/agentos-key-art.webp',
+      artFocus: '48% 40%',
+      hue: 268
+    },
     {
       title: 'WRIGGZ',
       genre: 'Competitive arena shooter',
@@ -20,18 +32,6 @@
       // Where the character sits in the art, so a portrait card crops around it rather than the centre.
       artFocus: '30% 45%',
       hue: 158
-    },
-    {
-      title: 'AGENTOS',
-      genre: 'Third-person arena shooter',
-      status: 'Coming soon',
-      blurb: 'Ricochet lasers, dashes, rappels and shields — 1V1 to 3V3 duels and three modes: ORB RUSH, RAMBALL, BREACH.',
-      // No store page yet, so the card is not a link. The key art is the game's splash with no
-      // lettering on it (Content/Data/UI/SplashZeroText1920x1080.png in the game's repo), as WRIGGZ's
-      // has none - resized to 1200 x 675 WebP.
-      art: '/agentos-key-art.webp',
-      artFocus: '48% 40%',
-      hue: 268
     }
   ];
 </script>
@@ -115,9 +115,7 @@
       <h2>About the studio</h2>
       <p>
         GameDevJug is a small independent studio in Croatia. We build competitive multiplayer games
-        for PC — WRIGGZ, an arena shooter running on dedicated servers with backend-driven
-        matchmaking and progression, out now; and AGENTOS, a third-person robot arena shooter, in
-        development.
+        for PC.
       </p>
       <p class="about-legal">
         GameDevJug is a brand of <strong>JASPERO d.o.o.</strong>, a company registered in
